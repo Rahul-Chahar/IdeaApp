@@ -7,7 +7,7 @@ const ideas = require('../models/ideas.model');
 /**
  * Create the controller for fetching all the ideas.
  * 
- * GET 127.0.0.1:8000/ideaApp/api/v1/ideas
+ * GET 127.0.0.1:3000/ideaApp/api/v1/ideas
  * 
  * Return the list of all the ideas.
  */
