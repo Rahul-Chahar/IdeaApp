@@ -88,3 +88,26 @@ exports.updateIdea = (req, res) => {
     // Return the updated idea
 
 }
+
+/**
+ * Controller for deleting the idea.
+ */
+
+exports.deleteIdea = (req, res) => {
+
+    //Fetch the idea and see if it is present
+    idea_id = req.params.id;
+
+    if(ideas[idea_id]){
+        // If present, delete the idea
+        delete ideas[idea_id];
+        res.status(200).send({
+            message: "Idea deleted successfully"
+        })
+    } else {
+        // If not present, return 404
+        res.status(404).send({
+            message: "Idea not found"
+        })
+    }
+}
