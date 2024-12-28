@@ -61,3 +61,30 @@ exports.createIdea = (req, res)=> {
     res.status(201).send(idea_object) 
 
 }
+
+/**
+ * Controller for updating the idea.
+ */
+
+exports.updateIdea = (req, res) => {
+
+    // Read the idea id
+    idea_id = req.params.id;
+
+    // Check if the idea with that id is present
+    if(ideas[idea_id]){
+        // If present, read the new idea body
+        idea_obj = req.body;
+        ideas[idea_id] = idea_obj;  // update the idea object
+        res.status(200).send(idea_obj);  // return the updated idea
+    } else {
+        // If not present, return 404
+        res.status(404).send({
+            message: "Idea not found"
+        })
+    }
+    // Read the new idea body and replace it
+
+    // Return the updated idea
+
+}
